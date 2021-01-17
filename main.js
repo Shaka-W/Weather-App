@@ -10,7 +10,6 @@
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=Braselton&units=imperial&appid=bab86470ddda8f382bb6436c9061325d`, {mode: 'cors'})
         .then(response => response.json())
         .then(response => {
-            console.log(response);
             weatherLocation.textContent = `${response.name}, ${response.sys.country}`;
             weatherCondition.textContent = `${response.weather[0].description}`;
             temperature.innerHTML = `${Math.round(response.main.temp)}&deg;F`;
@@ -23,7 +22,6 @@
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationSearch.value}&units=imperial&appid=bab86470ddda8f382bb6436c9061325d`, {mode: 'cors'})
         .then(response => response.json())
         .then(response => {
-            console.log(response);
             weatherLocation.textContent = `${response.name}, ${response.sys.country}`;
             weatherCondition.textContent = `${response.weather[0].description}`;
             temperature.innerHTML = `${Math.round(response.main.temp)}&deg;F`;
